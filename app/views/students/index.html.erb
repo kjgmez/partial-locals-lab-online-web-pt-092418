@@ -1,0 +1,16 @@
+<% @stud = Student.new %>
+<%= form_for @stud, method: :get do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Search"%>
+<% end %>
+
+<%#= form_tag(students_path method: :get) do %>
+<!--  Student Name:<%#= text_field_tag(:search, nil, name:'student[name]')%>-->
+  <%#= submit_tag "Search", search: nil %>
+<%# end %>
+<% #binding.pry %>
+<% @students.each do |s| %>
+  <%= render partial: "student", locals: {student: s} %><br>
+<% end %>
+
+
